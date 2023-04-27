@@ -2,6 +2,7 @@
 	"BuildId": "3944462",
 	"Modules": 
 	{
-		"ArenaBattle": "UE4Editor-ArenaBattle-4845.dll"
+		"ArenaBattle": "UE4Editor-ArenaBattle.dll",
+		"ArenaBattleSetting": "UE4Editor-ArenaBattleSetting.dll"
 	}
 }
