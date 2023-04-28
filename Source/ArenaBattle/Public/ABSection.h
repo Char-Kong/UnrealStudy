@@ -43,6 +43,11 @@ private:
 	UFUNCTION()
 	void OnGateTriggerBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult &SweepResult);
 
+	void OnNPCSpawn();
+
+	UFUNCTION()
+	void OnKeyNPCDestroyed(AActor* DestroyedActor);											
+
 private:
 	UPROPERTY(VisibleAnywhere, Category = Mesh, Meta = (AllowPrivateAccess = true))
 	TArray<UStaticMeshComponent*> GateMeshes;
@@ -57,5 +62,14 @@ private:
 	UBoxComponent* Trigger;
 
 	UPROPERTY(EditAnywhere, Category = Mesh, Meta = (AllowPrivateAccess = true))
-	bool bNoBattle;
+	bool bNoBattle;	
+
+	UPROPERTY(EditAnywhere, Category = Mesh, Meta = (AllowPrivateAccess = true))
+	float EnemySpawnTime;
+
+	UPROPERTY(EditAnywhere, Category = Mesh, Meta = (AllowPrivateAccess = true))
+	float ItemBoxSpawnTime;
+
+	FTimerHandle SpawnNPCTimerHandle = { };
+	FTimerHandle SpawnItemBoxTimerHandle = { };
 };
